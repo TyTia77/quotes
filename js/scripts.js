@@ -1,34 +1,53 @@
 var quotesArr = [];
 var html = $('main');
-var quoteIcon = '<i class="fa fa-quote-left" aria-hidden="true" style="font-size: 40px;"></i>  ';
+var currentQuote;
 
  $.get('data/quotes.json', function(data){
-     setColor();
     data.forEach(function(each){
         quotesArr.push(each);
     });
-
-    html.html(
-        quoteIcon
-        +quotesArr[randomGen(data.length)] +' ...'
-        // +' ...  <i class="fa fa-quote-right" aria-hidden="true"></i>'
-
-    );
+    insertQuoteDom(data.length);
 });
 
-setInterval(function(){
+$('.btn-next').on('click', function(ev){
+    insertQuoteDom(quotesArr.length);
+});
+
+$('.twitter-button').on('click', function(ev){
+    console.log(ev);
+    //opens same tab
+    // window.location.href = "https://twitter.com/intent/tweet";
+
+    // opens new tab
+    window.open("https://twitter.com/intent/tweet?text=" +capitalize(currentQuote));
+});
+
+
+function insertQuoteDom(length){
+    var quoteIcon = '<i class="fa fa-quote-left" aria-hidden="true" style="font-size: 40px;"></i>  ';
+
     setColor();
     html.html(
         quoteIcon
-        +quotesArr[randomGen(quotesArr.length)] +' ...'
-        // +' ...  <i class="fa fa-quote-right" aria-hidden="true"></i>'
+        +getQuote(length) +' ...'
     );
+}
 
-    window.setTimeOut(function(){
-        $('main').addClass('out1');
-    }, 7000);
+function getQuote(length){
+    if(length){
+        currentQuote = quotesArr[randomGen(length)];
+        return this.currentQuote;
+    }
+}
 
-}, 8000);
+function capitalize(string){
+    string = string.split(' ');
+    var temp = [];
+    string.forEach(function(index){
+        temp.push(index[0].toUpperCase() +index.slice(1));
+    });
+    return temp.join(' ');
+}
 
 
 function randomGen(length){
@@ -53,5 +72,4 @@ function setColor(){
     $('body').css({'background-color' : color});
     $('main').css({'color': color});
     $('.btn-next').css({'background-color': color});
-    // $('.twitter-icon').css({'color': color});
 }
