@@ -2,7 +2,6 @@ var quotesArr = [];
 var html = $('main');
 var quoteIcon = '<i class="fa fa-quote-left" aria-hidden="true" style="font-size: 40px;"></i>  ';
 
-
  $.get('data/quotes.json', function(data){
      setColor();
     data.forEach(function(each){
