@@ -4,24 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <style>
-        #test{
-            margin: 0 auto;
-            text-align: center;
-            display: inline-block;
-            padding: 10px;
-            font-size: 30px;
-            text-transform: capitalize;
-            border: 3px solid grey;
-            max-width: 500px;
-        }
-    </style>
+    <title>Quotes</title>
+    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Wendy One">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://use.fontawesome.com/89e76766d0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
-    <div id="test"></div>
+    <!-- <div class="quote-container">
+        <main></main>
+        <footer>
+            <a class="fa fa-twitter twitter-icon" aria-hidden="true" data-text="Tweet This Quote!"></a>
+            <button class="btn-next">next quote</button>
+        </footer>
+    </div> -->
+
+    <div class="container-fuild quote-container">
+        <div class="row">
+            <main class="col-xs-offset-2 col-xs-8"></main>
+        </div>
+        <footer class="row">
+            <a class="col-xs-offset-1 col-xs-2 fa fa-twitter twitter-icon" aria-hidden="true" data-text="Tweet This Quote!"></a>
+            <button class="col-xs-offset-5 col-xs-3 btn-next">next quote</button>
+        </footer>
+    </div>
 <script src="js/scripts.js"></script>
 </body>
 </html>
