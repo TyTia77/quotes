@@ -53,8 +53,8 @@ function clearClassName(){
 }
 
 function setClass(){
-    var classNamesIn = [  'spin-in', 'scale-in'];
-    var classNamesOut = [ 'spin-out',  'scale-out'];
+    var classNamesIn = ['fade-in',  'spin-in', 'scale-in'];
+    var classNamesOut = ['fade-out', 'spin-out',  'scale-out'];
     var dom = $('.quote-container');
 
     clearClassName();
