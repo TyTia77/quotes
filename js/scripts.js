@@ -1,6 +1,7 @@
 var quotesArr = [];
 var html = $('main');
 var currentQuote;
+var prev;
 
  $.get('data/quotes.json', function(data){
     data.forEach(function(each){
@@ -24,27 +25,29 @@ $('.twitter-button').on('click', function(ev){
 
 function insertQuoteDom(length, noclass){
     var quoteIcon = '<i class="fa fa-quote-left" aria-hidden="true" style="font-size: 40px;"></i>  ';
+    var timer = noclass ? 0 : 1000;
     if (!noclass){
         setClass();
     }
     setColor();
-    html.html(
-        quoteIcon
-        +getQuote(length) +' ...'
-    );
+    setTimeout(function(){
+        html.html(
+            quoteIcon
+            +getQuote(length) +' ...'
+        );
+    }, timer);
 }
 
 function getQuote(length){
-    if(length){
-        currentQuote = quotesArr[randomGen(length)];
-        return this.currentQuote;
-    }
+    currentQuote = quotesArr[randomGen(length)];
+    return currentQuote;
 }
 
 function clearClassName(){
     var dom = $('.quote-container');
     var classList = dom.attr('class').split(' ');
 
+    // remove every class except quote-container
     classList.forEach(function(c){
         if(c !== 'quote-container'){
             dom.removeClass(c);
@@ -56,20 +59,24 @@ function setClass(){
     var classNamesIn = ['fade-in',  'spin-in', 'scale-in'];
     var classNamesOut = ['fade-out', 'spin-out',  'scale-out'];
     var dom = $('.quote-container');
-
+    var rand = function(){
+        var temp = randomGen(classNamesIn.length);
+        temp = temp === prev ? rand() : temp;
+        prev = temp;
+        return temp;
+    };
     clearClassName();
 
-    dom.addClass(classNamesOut[randomGen(classNamesOut.length)]);
+    dom.addClass(classNamesOut[rand()]);
     setTimeout(function(){
         clearClassName();
-        dom.addClass(classNamesIn[randomGen(classNamesIn.length)]);
+        dom.addClass(classNamesIn[rand()]);
     }, 1000);
 }
 
 function capitalize(string){
-    string = string.split(' ');
     var temp = [];
-    string.forEach(function(index){
+    string.split(' ').forEach(function(index){
         temp.push(index[0].toUpperCase() +index.slice(1));
     });
     return temp.join(' ');
@@ -79,7 +86,6 @@ function capitalize(string){
 function randomGen(length){
     return Math.floor(Math.random() * length);
 }
-
 
 function getColor(){
     var colors = [
