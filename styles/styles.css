@@ -110,13 +110,13 @@ footer{
 }
 
 .scale-in{
-    opacity: 0;
+    /*opacity: 0;*/
     transform: translate(-50%, -50%) scale(0);
     animation: scale 1s ease forwards;
 }
 
 .scale-out{
-    opacity: 1;
+    /*opacity: 1;*/
     transform: translate(-50%, -50%) scale(1);
     animation: scale 1s ease reverse;
 }
@@ -147,27 +147,27 @@ footer{
 }
 
 @keyframes scale{
-    0%{transform: translate(-50%, -50%) scale(0); opacity: 0}
-    25%{transform: translate(-50%, -50%) scale(.5); opacity: .25}
-    50%{transform: translate(-50%, -50%) scale(.75); opacity: .5}
-    75%{transform: translate(-50%, -50%) scale(1.1); opacity: .75}
-    100%{transform: translate(-50%, -50%) scale(1); opacity: 1}
+    0%{transform: translate(-50%, -50%) scale(0)}
+    /*25%{transform: translate(-50%, -50%) scale(.5); opacity: .25}*/
+    /*50%{transform: translate(-50%, -50%) scale(.75); opacity: .5}*/
+    75%{transform: translate(-50%, -50%) scale(1.2)}
+    100%{transform: translate(-50%, -50%) scale(1)}
 }
 
 @keyframes spin{
     0%{transform: translate(-50%, -50%) scale(0) rotate(0deg); opacity: 0}
-    25%{transform: translate(-50%, -50%) scale(.5) rotate(100deg); opacity: .25}
-    50%{transform: translate(-50%, -50%) scale(.75) rotate(200deg); opacity: .5}
-    75%{transform: translate(-50%, -50%) scale(1.1) rotate(300deg); opacity: .75}
+    /*25%{transform: translate(-50%, -50%) scale(.5) rotate(100deg); opacity: .25}*/
+    /*50%{transform: translate(-50%, -50%) scale(.75) rotate(200deg); opacity: .5}*/
+    /*75%{transform: translate(-50%, -50%) scale(1.1) rotate(300deg); opacity: .75}*/
     100%{transform: translate(-50%, -50%) scale(1) rotate(360deg); opacity: 1}
 }
 
 @keyframes fade{
-    0%{transform: translate(-50%, -50%); opacity: 0}
-    25%{transform: translate(-50%, -50%); opacity: .25}
-    50%{transform: translate(-50%, -50%); opacity: .5}
-    75%{transform: translate(-50%, -50%); opacity: .75}
-    100%{transform: translate(-50%, -50%); opacity: 1}
+    0%{transform: translate(-50%, -50%) scale(0); opacity: 0}
+    /*25%{transform: translate(-50%, -50%); opacity: .25}*/
+    /*50%{transform: translate(-50%, -50%); opacity: .5}*/
+    /*75%{transform: translate(-50%, -50%); opacity: .75}*/
+    100%{transform: translate(-50%, -50%) scale(1); opacity: 1}
 }
 
 @keyframes glow{
