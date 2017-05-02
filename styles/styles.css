@@ -16,7 +16,7 @@ html, body{
     margin: 0 auto;
     display: inline-block;
     /*padding: 30px;*/
-    min-width: 320px;
+    min-width: 300px;
     max-width: 500px;
     border-radius: 5px;
     transform: translate(-50%, -1000%) scale(0);
@@ -39,14 +39,15 @@ main{
     /*color: #F39C12;*/
 }
 
-/*footer{
-    padding: 20px;
-}*/
+footer{
+    margin-bottom: 10px;
+}
 
 .btn-next{
     /*float: right;*/
-    font-size: 16px;
-    padding: 7px 0px;
+    font-size: 15px;
+    padding: 10px 0px;
+    /*margin-bottom: 10px;*/
     border-radius: 5px;
     border: none;
     font-weight: bold;
@@ -57,7 +58,7 @@ main{
 .twitter-icon{
     position: relative;
     color: #1DA1F2;
-    padding:0 0 15px 0!important;
+    padding:0 0 0 0!important;
     font-size: 40px!important;
 }
 
@@ -66,7 +67,6 @@ main{
     color: #1DA1F2;
     text-decoration: none;
 }
-
 
 .twitter-icon:hover::after{
     content: attr(data-text);
