@@ -6,7 +6,7 @@ var currentQuote;
     data.forEach(function(each){
         quotesArr.push(each);
     });
-    insertQuoteDom(data.length);
+    insertQuoteDom(data.length, true);
 });
 
 $('.btn-next').on('click', function(ev){
@@ -22,10 +22,11 @@ $('.twitter-button').on('click', function(ev){
     window.open("https://twitter.com/intent/tweet?text=" +capitalize(currentQuote));
 });
 
-
-function insertQuoteDom(length){
+function insertQuoteDom(length, noclass){
     var quoteIcon = '<i class="fa fa-quote-left" aria-hidden="true" style="font-size: 40px;"></i>  ';
-
+    if (!noclass){
+        setClass();
+    }
     setColor();
     html.html(
         quoteIcon
@@ -38,6 +39,31 @@ function getQuote(length){
         currentQuote = quotesArr[randomGen(length)];
         return this.currentQuote;
     }
+}
+
+function clearClassName(){
+    var dom = $('.quote-container');
+    var classList = dom.attr('class').split(' ');
+
+    classList.forEach(function(c){
+        if(c !== 'quote-container'){
+            dom.removeClass(c);
+        }
+    });
+}
+
+function setClass(){
+    var classNamesIn = ['fade-in',  'spin-in', 'scale-in'];
+    var classNamesOut = ['fade-out', 'spin-out',  'scale-out'];
+    var dom = $('.quote-container');
+
+    clearClassName();
+
+    dom.addClass(classNamesOut[randomGen(classNamesOut.length)]);
+    setTimeout(function(){
+        clearClassName();
+        dom.addClass(classNamesIn[randomGen(classNamesIn.length)]);
+    }, 1000);
 }
 
 function capitalize(string){
@@ -53,6 +79,7 @@ function capitalize(string){
 function randomGen(length){
     return Math.floor(Math.random() * length);
 }
+
 
 function getColor(){
     var colors = [
