@@ -45,8 +45,8 @@ main{
 
 .btn-next{
     /*float: right;*/
-    font-size: 20px;
-    /*padding: 5px 10px;*/
+    font-size: 16px;
+    padding: 7px 0px;
     border-radius: 5px;
     border: none;
     font-weight: bold;
@@ -57,6 +57,7 @@ main{
 .twitter-icon{
     position: relative;
     color: #1DA1F2;
+    padding:0 0 15px 0!important;
     font-size: 40px!important;
 }
 
