@@ -1,5 +1,4 @@
 html, body{
-    transition-delay: .5s;
     transition-duration: 1s;
 }
 
@@ -26,7 +25,6 @@ main{
     text-align: center;
     text-transform: capitalize;
     font-family: 'Wendy One';
-    transition-delay: .5s;
     transition-duration: 1s;
 }
 
@@ -42,7 +40,6 @@ footer{
     font-weight: bold;
     color: white;
     text-transform: capitalize;
-    transition-delay: .5s;
     transition-duration: 1s;
 }
 

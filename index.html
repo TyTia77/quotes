@@ -8,22 +8,29 @@
     <link rel="stylesheet" href="dist/style.min.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Wendy One">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <script src="https://use.fontawesome.com/89e76766d0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="dist/script.min.js"></script>
+
+    <!-- <script src="scripts.js"></script> -->
 </head>
-    <body>
+    <body ng-app="quoteApp" ng-controller="mainCtrl" style="background-color:{{color}}">
         <div class="quote-container drop-in">
             <div class="container-fuild  col-xs-offset-1 col-xs-10">
-                <main class="col-xs-12"></main>
+                <main class="col-xs-12" style="color: {{color}}">
+                    <i class="fa fa-quote-left" aria-hidden="true" style="font-size: 40px;"></i>
+                    {{quoteText}}
+                </main>
                 <footer class="row">
-                    <div class="col-xs-5 twitter-button">
+                    <div class="col-xs-5 twitter-button" ng-click="btnTwitterClick()">
                         <a class="fa fa-twitter twitter-icon" aria-hidden="true" data-text="Tweet This Quote!"></a>
-                        <span class="twitter-text">Tweet</span>
+                        <span class="twitter-text">Twitter</span>
                     </div>
-                    <button class="col-xs-offset-1 col-xs-6 btn-next">next quote</button>
+                    <button class="col-xs-offset-1 col-xs-6 btn-next" ng-click="btnNextClick()" style="background-color: {{color}}">next quote</button>
                 </footer>
             </div>
         </div>
-        <script src="dist/script.min.js"></script>
     </body>
 </html>
