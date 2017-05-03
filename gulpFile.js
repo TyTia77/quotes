@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const concat = require('gulp-concat');
 const uglifycss = require('gulp-uglifycss');
@@ -7,8 +8,10 @@ const watch = require('gulp-watch');
 
 gulp.task('buildjs', () => {
     return gulp
-        // .src('[app/js/**/*.+(js|css)]')
         .src(['js/**/*.js'])
+        .pipe(babel({
+          presets: ['es2015']
+        }))
         .pipe(concat('script.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('dist/'));
@@ -18,7 +21,6 @@ gulp.task('buildcss', () => {
     return gulp
         .src(['styles/**/*.css'])
         .pipe(uglifycss({
-            // "maxLineLen": 80,
             "uglyComments": false
         }))
         .pipe(autoprefixer({
@@ -31,18 +33,12 @@ gulp.task('buildcss', () => {
 
 gulp.task('watch', () => {
     gulp.watch(
-        [
-            './styles/**/*.css'
-        ],
-
+        ['./styles/**/*.css'],
         ['buildcss']
     );
 
     gulp.watch(
-        [
-            './js/**/*.js',
-        ],
-
+        ['./js/**/*.js'],
         ['buildjs']
     );
 });
