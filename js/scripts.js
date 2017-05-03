@@ -15,7 +15,6 @@ $('.btn-next').on('click', function(ev){
 });
 
 $('.twitter-button').on('click', function(ev){
-    console.log(ev);
     //opens same tab
     // window.location.href = "https://twitter.com/intent/tweet";
 
