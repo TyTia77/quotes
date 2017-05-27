@@ -5,16 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Quotes</title>
-    <link rel="stylesheet" href="dist/style.min.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Wendy One">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <script src="https://use.fontawesome.com/89e76766d0.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="dist/script.min.js"></script>
-
-    <!-- <script src="scripts.js"></script> -->
+    <link rel="stylesheet" href="dist/style.min.css">
 </head>
     <body ng-app="quoteApp" ng-controller="mainCtrl" style="background-color:{{color}}">
         <div class="quote-container drop-in">
@@ -26,11 +19,16 @@
                 <footer class="row">
                     <div class="col-xs-5 twitter-button" ng-click="btnTwitterClick()">
                         <a class="fa fa-twitter twitter-icon" aria-hidden="true" data-text="Tweet This Quote!"></a>
-                        <span class="twitter-text">Twitter</span>
+                        <span class="twitter-text">Share</span>
                     </div>
                     <button class="col-xs-offset-1 col-xs-6 btn-next" ng-click="btnNextClick()" style="background-color: {{color}}">next quote</button>
                 </footer>
             </div>
         </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+        <script src="https://use.fontawesome.com/89e76766d0.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="dist/script.min.js"></script>
     </body>
 </html>
