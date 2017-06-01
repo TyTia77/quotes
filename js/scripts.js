@@ -13,17 +13,15 @@ app.factory('api', ['$http', function($http){
 app.controller('mainCtrl', ['$scope', 'api', '$timeout', function($scope, api, $timeout){
 
     var colors = ['#77B1A9', '#F39C12', '#E74C3C', '#BDBB99', '#472E32', '#9B59B6'];
-    $scope.quoteText = '';
-    $scope.color = '';
-
     var quotesArray = [];
     var currentQuote = '';
     var prev;
+    setColor();
 
     api.getQuotes().then(function(data){
         quotesArray = data.data;
-        setColor();
         getNewQuote();
+        $scope.ready = true;
     }).catch(handleErr);
 
     $scope.btnNextClick = function(){
@@ -48,7 +46,6 @@ app.controller('mainCtrl', ['$scope', 'api', '$timeout', function($scope, api, $
     }
 
     function setClass(){
-
 
         var classNamesIn = ['fade-in',  'spin-in', 'scale-in'];
         var classNamesOut = ['fade-out', 'spin-out',  'scale-out'];

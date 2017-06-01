@@ -78,9 +78,3 @@ footer{
     color: white!important;
     text-decoration: none;
 }
-
-.drop-in{
-    opacity: 0;
-    transform: translate(-50%, -1000%) scale(0);
-    animation: drop 1s ease forwards;
-}

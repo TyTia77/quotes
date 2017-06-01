@@ -1,41 +1,25 @@
 .fade-in{
-    opacity: 0;
-    transform: translate(-50%, -50%);
     animation: fade 1s ease forwards;
 }
 
 .fade-out{
-    opacity: 1;
-    transform: translate(-50%, -50%);
     animation: fade 1s ease reverse;
 }
 
 .scale-in{
-    transform: translate(-50%, -50%) scale(0);
     animation: scale 1s ease forwards;
 }
 
 .scale-out{
-    transform: translate(-50%, -50%) scale(1);
     animation: scale 1s ease reverse;
 }
 
 .spin-in{
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0);
     animation: spin 1s ease forwards;
 }
 
 .spin-out{
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
     animation: spin 1s ease reverse;
-}
-
-@keyframes drop{
-    0%{}
-    50%{ transform: translate(-50%, -10%) scale(.4); opacity: 1}
-    100%{ transform: translate(-50%, -50%) scale(1); opacity: 1}
 }
 
 @keyframes scale{
@@ -50,6 +34,6 @@
 }
 
 @keyframes fade{
-    0%{transform: translate(-50%, -50%); opacity: 0}
-    100%{transform: translate(-50%, -50%); opacity: 1}
+    0%{opacity: 0}
+    100%{opacity: 1}
 }

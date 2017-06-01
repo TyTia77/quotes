@@ -1,0 +1,15 @@
+<div class="quote-container fade-in">
+    <div class="container-fuild  col-xs-offset-1 col-xs-10">
+        <main class="col-xs-12" style="color: {{color}}">
+            <i class="fa fa-quote-left" aria-hidden="true" style="font-size: 40px;"></i>
+            {{quoteText}}
+        </main>
+        <footer class="row">
+            <div class="col-xs-5 twitter-button" ng-click="btnTwitterClick()">
+                <a class="fa fa-twitter twitter-icon" aria-hidden="true" data-text="Tweet This Quote!"></a>
+                <span class="twitter-text">Share</span>
+            </div>
+            <button class="col-xs-offset-1 col-xs-6 btn-next" ng-click="btnNextClick()" style="background-color: {{color}}">next quote</button>
+        </footer>
+    </div>
+</div>
