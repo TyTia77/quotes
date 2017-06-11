@@ -15,11 +15,11 @@ app.controller('mainCtrl', ['$scope', 'api', '$timeout', function($scope, api, $
     var colors = ['#77B1A9', '#F39C12', '#E74C3C', '#BDBB99', '#472E32', '#9B59B6'];
     var quotesArray = [];
     var currentQuote = '';
-    var prev;
-    setColor();
+    var prev = 0;
 
     api.getQuotes().then(function(data){
         quotesArray = data.data;
+        setColor();
         getNewQuote();
         $scope.ready = true;
     }).catch(handleErr);
@@ -46,7 +46,6 @@ app.controller('mainCtrl', ['$scope', 'api', '$timeout', function($scope, api, $
     }
 
     function setClass(){
-
         var classNamesIn = ['fade-in',  'spin-in', 'scale-in'];
         var classNamesOut = ['fade-out', 'spin-out',  'scale-out'];
 
@@ -64,7 +63,7 @@ app.controller('mainCtrl', ['$scope', 'api', '$timeout', function($scope, api, $
             $('.quote-container').addClass(classNamesIn[rand()]);
             setColor();
             getNewQuote();
-        }, 1000);
+        }, 950);
     }
 
     function clearClassList(){
